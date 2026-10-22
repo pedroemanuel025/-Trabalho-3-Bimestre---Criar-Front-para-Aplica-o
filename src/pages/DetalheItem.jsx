@@ -9,7 +9,6 @@ export default function DetalheItem() {
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState("");
   
-  // Controle da Devolução e Confirmação de Exclusão
   const [devolvidoPara, setDevolvidoPara] = useState("");
   const [confirmandoExclusao, setConfirmandoExclusao] = useState(false);
 
@@ -73,7 +72,7 @@ export default function DetalheItem() {
         <button onClick={() => setConfirmandoExclusao(true)} style={{ background: "red", color: "white" }}>Excluir</button>
       </div>
 
-      {/* Modal / Bloco de Confirmação de Exclusão */}
+
       {confirmandoExclusao && (
         <div style={{ background: "#ffeeee", padding: "15px", marginTop: "15px", border: "1px solid red" }}>
           <p>Tem certeza que deseja excluir?</p>
@@ -82,7 +81,6 @@ export default function DetalheItem() {
         </div>
       )}
 
-      {/* Marcar como Devolvido */}
       {item.status === "aguardando" && (
         <form onSubmit={handleDevolver} style={{ marginTop: "20px", borderTop: "1px solid #ccc", paddingTop: "15px" }}>
           <h3>Marcar como devolvido</h3>

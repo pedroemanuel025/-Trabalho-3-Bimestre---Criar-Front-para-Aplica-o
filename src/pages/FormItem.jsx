@@ -62,7 +62,7 @@ export default function FormItem() {
       }
       navigate("/");
     } catch (err) {
-      // Pega a mensagem detalhada da API caso retorne erro 422
+
       const msgErro = err.response?.data?.detail || "Erro ao salvar item.";
       setErro(typeof msgErro === "string" ? msgErro : JSON.stringify(msgErro));
     }

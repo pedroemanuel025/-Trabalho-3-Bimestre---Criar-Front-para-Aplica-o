@@ -8,13 +8,12 @@ export default function Home() {
   const [categorias, setCategorias] = useState([]);
   const [locais, setLocais] = useState([]);
 
-  // Estados de Filtros
   const [busca, setBusca] = useState("");
   const [status, setStatus] = useState("");
   const [categoria, setCategoria] = useState("");
   const [local, setLocal] = useState("");
 
-  // Estados de UI
+
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState("");
 
@@ -73,7 +72,6 @@ export default function Home() {
         <Link to="/novo"><button>+ Novo Item</button></Link>
       </div>
 
-      {/* Filtros */}
       <div style={{ display: "flex", gap: "10px", marginBottom: "20px", flexWrap: "wrap" }}>
         <input 
           type="text" 
@@ -103,7 +101,6 @@ export default function Home() {
         </select>
       </div>
 
-      {/* Estados da Tela */}
       {loading && <p>Carregando itens...</p>}
       {erro && <p style={{ color: "red" }}>{erro}</p>}
 
@@ -111,7 +108,7 @@ export default function Home() {
         <p>Nenhum item encontrado.</p>
       )}
 
-      {/* Lista de Itens */}
+
       <div style={{ display: "grid", gap: "10px" }}>
         {itens.map((item) => (
           <div key={item.id} style={{ border: "1px solid #ccc", padding: "15px", borderRadius: "5px" }}>
